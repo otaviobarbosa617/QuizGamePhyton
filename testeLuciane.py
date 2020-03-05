@@ -2,9 +2,11 @@ import requests
 import json
 import random
 import html
-from flask import Flask, render_template, request
 
-app = Flask(__name__)
+
+# In the future, I'd like to make it a webap
+# from flask import Flask, render_template, request
+# app = Flask(__name__)
 
 wins = 0
 loses = 0
@@ -13,7 +15,8 @@ rodada = False
 
 while rodada == False:
     question_num = 1
-
+    
+    # TO-DO - Create a request to get a new token 
     r = requests.get("https://opentdb.com/api.php?amount=1&token=b44a0bcf1507babc06d1f664dddecd519bd5d124998c4827eacb9936fca1e48d&category=14&difficulty=easy&type=multiple")
     r.text
 
